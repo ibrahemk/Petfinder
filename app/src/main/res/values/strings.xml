@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Petfinder</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name :</string>
+    <string name="size">Size :</string>
+    <string name="color">Color :</string>
+    <string name="address">Address :</string>
+    <string name="pet_s_website">Pet\'s Website</string>
+    <string name="gender">Gender :</string>
+    <string name="type">Type :</string>
+</resources>

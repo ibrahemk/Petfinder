@@ -33,33 +33,7 @@ class RF_Requests {
 
         return output
     }
-    fun Post_json(url: String, param: JSONObject, activity: FragmentActivity):String{
-        var output:String=""
 
-
-        val apiInterface = APIClient.getClient(extractUrl(url))!!.create(
-            APIInterface::class.java
-        )
-
-
-        val executed =
-            apiInterface.POStrequestjs(url,
-                createPartFromStringjson(param)!!
-            )?.execute()
-
-
-        output = if (executed!!.isSuccessful){
-            executed.body().toString()
-        }else{
-
-            executed.raw().toString()
-        }
-
-
-
-        return output
-
-    }
 
     fun Post(url: String, param: HashMap<String,Any>, activity: Context):String{
         var output:String=""
@@ -71,14 +45,12 @@ class RF_Requests {
         val executed =
             apiInterface.POStrequest(url,param)?.execute()
 
-
         output = if (executed!!.isSuccessful){
             executed.body().toString()
         }else{
 
-            "${executed.message()} ${executed.errorBody().toString()}"
+            executed.raw().toString()
         }
-
 
 
         return output

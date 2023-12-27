@@ -52,7 +52,7 @@ class RF_Requests {
             executed.body().toString()
         }else{
 
-            "${executed.message()} ${executed.errorBody().toString()}"
+            executed.raw().toString()
         }
 
 

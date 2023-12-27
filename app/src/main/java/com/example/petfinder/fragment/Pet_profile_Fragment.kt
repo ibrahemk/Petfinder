@@ -29,6 +29,7 @@ class Pet_profile_Fragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding= FragmentPetProfileBinding.inflate(inflater, container, false)
+        model.changeToolbarTitleWithBackArrow(requireActivity(),"Pet Details",binding.toolbarLayout)
         return binding.root
     }
 

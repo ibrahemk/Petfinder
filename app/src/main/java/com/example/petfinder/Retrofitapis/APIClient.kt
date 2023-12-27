@@ -17,6 +17,7 @@ class APIClient {
             val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
             retrofit = Retrofit.Builder()
+
                 .baseUrl(url)
 
                 .addConverterFactory(ToStringConverterFactory())

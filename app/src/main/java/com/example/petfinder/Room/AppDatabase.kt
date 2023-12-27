@@ -10,7 +10,7 @@ import com.example.petfinder.Bean.Pet
 
 @Database(entities = [Pet::class], version = 13)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun CityDao(): Pets_dao?
+    abstract fun Pets_dao(): Pets_dao?
 
     companion object {
         private var mInstance: AppDatabase? = null

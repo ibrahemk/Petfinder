@@ -4,6 +4,7 @@ import android.net.Uri
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.petfinder.Bean.Pet
 import com.example.petfinder.R
 import com.example.petfinder.Viewmodel.Pet_list_viewmodel
@@ -26,10 +27,14 @@ class Pet_list_holder(val binding: PetRowBinding, val model: Pet_list_viewmodel)
     }
     fun setimage(pet: Pet) {
 
-
+        val myOptions: RequestOptions = RequestOptions()
+            .override(200, 200)
+            .fitCenter()
+            .placeholder(R.drawable.no_image)
         Glide.with(model.activity)
             .asBitmap()
-            .load(pet.image)
+            .load(pet.smallimage)
+            .apply(myOptions)
             .into(binding.Petimage)
 
     }

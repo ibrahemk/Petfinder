@@ -11,8 +11,8 @@ class Type_list_holder(val binding: TypeItemBinding, val model:Pet_list_viewmode
         fun handle_item(type:Pet_type){
             type.let {
                 binding.typename.text = type.type
-                binding.main.setOnClickListener { select_type(type) }
-                if (type.isSelected){
+                binding.main.setOnClickListener { model.select_type(type) }
+                if (model.type_selected == it.type){
                     binding.typename.setTextColor(model.activity.getColor(R.color.white))
                     binding.main.setBackgroundColor(model.activity.getColor(R.color.black))
                 }else{
@@ -21,7 +21,5 @@ class Type_list_holder(val binding: TypeItemBinding, val model:Pet_list_viewmode
                 }
             }
         }
-    fun select_type(type: Pet_type){
-        type.isSelected=true
-    }
+
 }

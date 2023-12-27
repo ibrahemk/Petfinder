@@ -7,17 +7,17 @@ import com.example.petfinder.Bean.Pet
 @Dao
 interface Pets_dao {
     @get:Query("SELECT * FROM Petlist")
-    val getallcity: List<Pet>?
+    val getallpet: List<Pet>?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(pets: List<Pet?>?)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertCity(vararg pet: Pet)
+    fun insertPet(vararg pet: Pet)
 
     @Delete
-    fun deleteCity(vararg pet: Pet)
+    fun deletePet(vararg pet: Pet)
 
     @Query("DELETE FROM Petlist")
-    fun deletecities()
+    fun deletePets()
 }
